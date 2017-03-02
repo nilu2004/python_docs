@@ -1,0 +1,536 @@
+Namespace
+=========
+
+1.# Note: You may get different value of id
+
+
+a = 2
+
+# Output: id(2)= 10919424
+
+print('id(2) =', id(2))
+
+
+
+# Output: id(a) = 10919424
+
+
+print('id(a) =', id(a))
+
+2. a = 2
+
+
+# Output: id(a) = 10919424
+
+print('id(a) =', id(a))
+
+
+a = a+1
+
+
+# Output: id(a) = 10919456
+
+print('id(a) =', id(a))
+
+
+# Output: id(3) = 10919456
+
+print('id(3) =', id(3))
+
+
+b = 2
+
+
+# Output: id(2)= 10919424
+
+print('id(2) =', id(2)) 
+
+3. a = 2
+
+
+# Output: id(a) = 10919424
+
+print('id(a) =', id(a))
+
+
+a = a+1
+
+
+# Output: id(a) = 10919456
+
+print('id(a) =', id(a))
+
+
+# Output: id(3) = 10919456
+
+print('id(3) =', id(3))
+
+b = 2
+
+
+# Output: id(2)= 10919424
+
+print('id(2) =', id(2))
+
+4. def printHello():
+  
+      print("Hello")
+
+   
+a = printHello()
+
+
+# Output: Hello
+
+
+a
+5. Example of Scope and namespace 
+=================================
+
+def outer_function():
+
+    b = 20
+
+    def inner_func():
+
+        c = 30
+
+
+a = 10
+
+6. def outer_function():
+
+    a = 20
+
+    def inner_function():
+
+        a = 30
+
+        print('a =',a)
+
+
+    inner_function()
+
+    print('a =',a)
+
+    
+a = 10
+
+outer_function()
+
+print('a =',a)
+
+6. Global Keyword
+=================
+
+def outer_function():
+
+    global a
+
+    a = 20
+
+    def inner_function():
+
+        global a
+
+        a = 30
+
+        print('a =',a)
+
+
+    inner_function()
+
+    print('a =',a)
+
+     
+a = 10
+
+outer_function()
+
+print('a =',a)
+class 
+======
+
+>>> class Employee:
+...    'Common base class for all employees'
+...    empCount = 0
+...    def __init__(self, name, salary):
+...       self.name = name
+...       self.salary = salary
+...       Employee.empCount += 1
+...
+...    def displayCount(self):
+...      print ("Total Employee %d" % Employee.empCount)
+...    def displayEmployee(self):
+...       print ("Name : ", self.name,  ", Salary: ", self.salary)
+...
+...
+>>>
+>>> emp1 = Employee("Zara", 2000)
+>>> emp1 = Employee("clara",4000)
+>>> emp1 = Employee("clara",4000)
+>>> emp2 = Employee("Zara", 2000)
+>>> emp1.displayEmployee()
+Name :  clara , Salary:  4000
+>>> emp2.displayEmployee()
+Name :  Zara , Salary:  2000
+>>> print("Employee count %d" % Employee.empCount
+...
+...
+... )
+Employee count 4
+==============================================================================================
+
+Student Class
+================
+
+>>> class  Student:
+...     studCount = 0
+...     def __init__(self,name,rollno):
+...        self.name=name
+...        self.rollno=rollno
+...        student.studCount += 1
+...
+...     def displaycount(self):
+...       print ("Total Students %d" % Student.studCount)
+...     def  displayStudent(self):
+...       print("Name: ",self.name, ", Rollno : ", self.rollno)
+...
+
+>>> stud1 = Student("Mary",1001)
+    stud2 = Student("Zaria",2001)
+class Polygon:
+    def __init__(self, no_of_sides):
+        self.n = no_of_sides
+        self.sides = [0 for i in range(no_of_sides)]
+
+    def inputSides(self):
+        self.sides = [float(input("Enter side "+str(i+1)+" : ")) for i in range(self.n)]
+
+    def dispSides(self):
+        for i in range(self.n):
+            print("Side",i+1,"is",self.sides[i])
+
+Bank Class
+==========
+
+>>> class Bank:
+...     "This is a bankingdata"
+...     custid=100
+...     def fun(self):
+...             print('Hello customer')
+...
+>>> bankobj = MyClass()
+>>> bankobj.fun()
+Hello JavaTpoint
+>>> bankobj = Bank()
+>>> bankobj.fun()
+Hello customer 
+
+Complex numbers
+==================
+
+>>> class ComplexNumber:
+...     def __init__(self,r=0,i=0):
+...         self.real=r
+...         self.imag=i
+...     def getData(self):
+...         print("{0} + {1}j".format(self.real,self.imag))
+...
+>>> c1 = ComplexNumber(5,6)
+>>> c1.getData() 
+
+>>> class ComplexNumber:
+...     def __init__(self,r=0,i=0):
+...         self.real=r
+...         self.imag=i
+...     def getData(self):
+...         print("Real:",self.real,"Imag:",self.imag)
+...
+
+
+>>> c1 = ComplexNumber(5,6)
+>>> c1.getData()
+Real: 5 Imag: 6
+
+>>> c2.attr=14
+>>> (c2.real,c2.imag,c2.attr)
+(14, 0, 14)
+
+Inheritance
+============
+
+>>> class Animal:
+...    def eat(self):
+...        print("eating")
+...    class Dog(Animal):
+...         def bark(self):
+...             print("barking")
+...    d=Dog()
+...    d.eat()
+...    d.bark()
+...
+eating
+barking
+
+>>> class Flower:
+...     def smell(self):
+...         print('smelling')
+...     class Rose(Flower):
+...         def beauty(self):
+...             print('beautiful')
+...     c = Rose()
+...     c.smell()
+...     c.beauty()
+...
+smelling
+beautiful
+
+>>class Animal:   
+    def eat(self):  
+      print ('Eating...')  
+>>class Dog(Animal):  
+   def bark(self):  
+      print ('Barking...')
+>>class BabyDog(Dog):  
+    def weep(self):  
+        print ('Weeping...'  )
+>>d=BabyDog()  
+>>d.eat()  
+>>d.bark()  
+>>d.weep() 
+
+or
+
+>>> class Animal:
+...     def eat(self):
+...       print ('Eating...')
+...     class Dog(Animal):
+...         def bark(self):
+...           print ('Barking...')
+...         class BabyDog(Dog):
+...             def weep(self):
+...               print ('Weeping...'  )
+...     b=BabyDog()
+...     b.eat()
+...     b.bark()
+...
+Eating...
+Barking...
+
+
+Inheritance
+===============
+class Polygon:
+    def __init__(self, no_of_sides):
+        self.n = no_of_sides
+        self.sides = [0 for i in range(no_of_sides)]
+
+    def inputSides(self):
+        self.sides = [float(input("Enter side "+str(i+1)+" : ")) for i in range(self.n)]
+
+    def dispSides(self):
+        for i in range(self.n):
+            print("Side",i+1,"is",self.sides[i])
+
+class Triangle(Polygon):
+    def __init__(self):
+        Polygon.__init__(self,3)
+
+    def findArea(self):
+        a, b, c = self.sides
+        # calculate the semi-perimeter
+        s = (a + b + c) / 2
+        area = (s*(s-a)*(s-b)*(s-c)) ** 0.5
+        print('The area of the triangle is %0.2f' %area)
+
+>>> t = Triangle()
+
+>>> t.inputSides()
+Enter side 1 : 3
+Enter side 2 : 5
+Enter side 3 : 4
+
+>>> t.dispSides()
+Side 1 is 3.0
+Side 2 is 5.0
+Side 3 is 4.0
+
+>>> t.findArea()
+The area of the triangle is 6.00
+
+
+Operator Overloading
+======================
+
+class Point:
+    def __init__(self, x = 0, y = 0):
+        self.x = x
+        self.y = y
+
+>>> p1 = Point(2,3)
+>>> p2 = Point(-1,2)
+>>> p1 + p2
+Traceback (most recent call last):
+...
+TypeError: unsupported operand type(s) for +: 'Point' and 'Point'
+
+Special Functions 
+=================
+
+class Point:
+    def __init__(self, x = 0, y = 0):
+        self.x = x
+        self.y = y
+    
+    def __str__(self):
+        return "({0},{1})".format(self.x,self.y)
+
+>>> p1 = Point(2,3)
+>>> print(p1)
+(2,3)
+
+>>> str(p1)
+'(2,3)'
+
+>>> format(p1)
+'(2,3)'
+
+Overloading the + operator
+==========================
+
+class Point:
+    def __init__(self, x = 0, y = 0):
+        self.x = x
+        self.y = y
+    
+    def __str__(self):
+        return "({0},{1})".format(self.x,self.y)
+    
+    def __add__(self,other):
+        x = self.x + other.x
+        y = self.y + other.y
+        return Point(x,y)
+
+
+Exception
+=========
+>>> try:
+...    a=10/0
+...    print (a)
+... except ArithmeticError:
+...     print("This statement is raising an exception ")
+... else:
+...     print("Welcome")
+...
+This statement is raising an exception
+
+try:  
+    a=10/0;  
+except ArithmeticError,StandardError:  
+    print "Arithmetic Exception"  
+else:  
+    print "Successfully Done"
+
+Mutliple Exceptions
+===================
+
+>>> try:
+...     a=10/0;
+... except (ArithmeticError , ZeroDivisionError):
+...     print("successfully Done")
+... else:
+...     print("successfully not Done")
+...
+successfully Done
+
+While True:
+...     try:
+...         x = int(input("Please enter a number: "))
+...         break
+...     except ValueError:
+...         print("Oops!  That was no valid number.  Try again..."
+
+Converting Farhenheit to Kelvin and vice versa
+===============================================
+
+def KelvinToFahrenheit(Temperature):
+   assert (Temperature >= 0),"Colder than absolute zero!"
+   return ((Temperature-273)*1.8)+32
+print KelvinToFahrenheit(273)
+print int(KelvinToFahrenheit(505.78))
+
+Raise Keyword
+===============
+>>> try:
+...     1 + spam * 3
+...     raise NameError("Hello")
+... except NameError as e :
+...     print ("An exception occured")
+...     print (e)
+...
+An exception occured
+name 'spam' is not defined
+
+Another method 
+================
+>>> try:
+...     1 + spam * 3;
+... except NameError:
+...     print ("An exception occured")
+...
+An exception occured
+print KelvinToFahrenheit(-5)
+
+Finally block 
+=============
+>>> try:
+...     a=10/0
+... except:
+...      print(" Zero divide exception")
+... finally:
+...       print("code to be executed ",a)
+...
+ Zero divide exception
+code to be executed  6
+
+>>> while True:
+...     try:
+...        x = int(input("Please enter the input:"))
+...        break
+...     except ValueError:
+...         print("oops ! that was no valid number ,try again ..")
+...
+Please enter the input:43
+
+(or)
+>>> while(True):
+...     try:
+...        x = int(input("Please enter the input:"))
+...        break
+...     except ValueError:
+...         print("oops ! that was no valid number ,try again ..")
+...
+...
+Please enter the input:forty three
+oops ! that was no valid number ,try again ..
+Please enter the input:
+oops ! that was no valid number ,try again ..
+
+
+
+
+
+>>> class ErrorInCode(Exception):
+...       def __init__(self, data):
+...            self.data = data
+...       def __str__(self):
+...           return repr(self.data)
+...
+>>> try:
+...    raise ErrorInCode(2000)
+... except ErrorInCode as ae:
+...     print ("Received error:", ae.data)
+...
+Received error: 2000
+
